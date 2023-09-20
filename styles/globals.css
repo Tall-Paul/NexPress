@@ -1,0 +1,170 @@
+.title-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+a {
+    text-decoration: none;
+}
+
+.title a, .single-post-title {
+    color: #fc0380;
+    text-decoration: none;
+    background-color: transparent;
+    line-height: 1.125;
+    font-size: 2.2rem;
+    font-family: "Mulish", sans-serif;
+    font-weight: 300;
+}
+
+.title {
+    margin-bottom: 0px;
+}
+
+.subtitle {
+    margin-top: 0px;
+}
+
+.subtitle{
+    font-family: "Mulish", sans-serif;
+    font-weight: 300;
+    display: block;
+    clear: left;
+    line-height: 1.5;
+    font-size: 1.125rem;
+    text-align: center !important;
+    color: #fc0380;
+}
+
+.main_container {
+    display: flex;
+  }
+  
+  .main_container .main_item {
+    height: 100px;
+    flex-grow: 1;
+  }
+
+  .right, .left {
+    width: 20%;
+    flex-shrink: 1;
+  }
+  
+  .main { 
+    display: flex;
+    flex-grow: 1; /* Set the middle element to grow and stretch */
+    max-width: 900px;
+  }
+  
+  .post-list-title a, .rightlinks-title, .recent-title {
+    color: #fc0380;
+    text-decoration: none;
+    background-color: transparent;
+    line-height: 1.125;
+    font-size: 1.5rem;
+    font-family: "Mulish", sans-serif;
+    font-weight: 300;
+  }
+
+
+  .post-list-columns{
+    display:flex;
+    margin-top: -17px;
+    border-bottom: 1px solid #e9ecef !important;
+  }
+
+  .content {
+    border-right: 1px solid #e9ecef !important;
+  }
+
+  .post-list-image img {
+    margin: 10px;
+    margin-top: 32px;
+  }
+
+  .post-list-excerpt {
+    max-width: 400px;
+    padding: 10px;
+    font-family: "Mulish", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.625;
+    color: #606366;
+    text-align: left;
+  }
+
+  .single-post-content {
+    color: #606366;
+    font-family: "Mulish", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.625;
+  }
+
+  .single-post-content img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .single-post-content h2 {
+    color: #606366;
+    font-family: "Mulish", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.625;
+  }
+
+  .post-list-item {
+    
+    margin-bottom: 20px;
+  }
+
+  .main-content, .main-right {
+    flex-grow: 1;
+  }
+
+  .main-content {
+    max-width: 630px;
+  }
+
+  @media only screen and (min-width: 768px) {
+  .main-content, .main-right {
+    margin-right:20px;
+  }
+  .post-list-image img {
+     margin-right: 32px;
+  }
+ }
+
+  @media only screen and (max-width: 768px) {
+    .main-right {
+        visibility: hidden;
+    }
+  } 
+
+  .rightlinks a, .recent a {
+    color: #fc0380;
+    text-decoration: none;
+    background-color: transparent;
+    line-height: 1.5;
+    font-size: 1rem;
+    font-family: "Mulish", sans-serif;
+    font-weight: 300;
+  }
+
+  .rightlinks-title, .recent-title {
+    margin-bottom: 10px;
+  }
+
+  .recent {
+    margin-top: 10px;
+    padding-top:10px;
+    border-top: 1px solid #e9ecef !important;
+  }
+
+
+
+ 
