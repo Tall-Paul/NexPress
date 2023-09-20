@@ -1,4 +1,4 @@
-const API_URL = '';
+const API_URL = process.env.API;
 
 export async function fetchAPI(
   query = "",
