@@ -53,7 +53,7 @@ export const getStaticProps  = async (context) => {
 
 export async function getStaticPaths(){
   const posts = await getPosts(10);
-  const paths = posts.map((post) => ({
+  const paths = posts.nodes.map((post) => ({
     params: { slug: [post.slug] },
   }))
   return { paths: paths, fallback: 'blocking' }

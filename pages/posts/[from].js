@@ -1,10 +1,10 @@
 // index.html
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import { PostList } from '../components/postList.js';
-import { getPosts } from '../lib/service.ts'
-import { getRecentPosts } from '../lib/service.ts';
-import Layout from '../components/layout.js'
+import { PostList } from '../../components/postList.js';
+import { getPosts } from '../../lib/service.ts'
+import { getRecentPosts } from '../../lib/service.ts';
+import Layout from '../../components/layout.js'
 import { dehydrate, QueryClient, useQuery } from 'react-query';
 
 function Header({ title }) {
@@ -22,19 +22,15 @@ export default function Page({posts}) {
         </Layout>)
 }
 
-/*Page.getLayout = function getLayout(page){
-    return (
-        <Layout>
-         {page}
-        </Layout>
-      )
-}*/
 
-export const getStaticProps  = async () => {
+
+export const getStaticProps  = async (context) => {
   const queryClient = new QueryClient()
   await queryClient.prefetchQuery('recentPosts', getRecentPosts)
   
-  const data = await getPosts(10); // retrieve first 100 posts
+
+
+  const data = await getPosts(10,context.params.from); // retrieve first 100 posts
   const posts = data;
  
   return {
@@ -45,3 +41,10 @@ export const getStaticProps  = async () => {
     revalidate: 3600,
   };      
 };
+
+export async function getStaticPaths(){
+    return {
+      paths: [],
+      fallback: 'blocking',
+    }
+}

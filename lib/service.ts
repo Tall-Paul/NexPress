@@ -30,13 +30,17 @@ export async function getSinglePost(slug:string){
 export async function getRecentPosts(){
   const data = await getPosts(5);
   //console.log("in get recent posts");
-  return data;
+  return data?.nodes;
 }
 
-export async function getPosts(first = 10) {
+export async function getCategory(first = 10, category = ''){
+
+}
+
+export async function getPosts(first = 10, after = "") {
   const data = await fetchAPI(
-    `query FetchPosts($first: Int = 10) {
-        posts(first: $first) {
+    `query FetchPosts($first: Int = 10, $after: String = "") {
+        posts(first: $first, after: $after) {
           nodes {
             excerpt
             featuredImage {
@@ -49,14 +53,21 @@ export async function getPosts(first = 10) {
             id
             uri
           }
+          pageInfo {
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+          }
         }
       }`,
     {
       variables: {
         first,
+        after
       },
     }
   );
 
-  return data?.posts?.nodes;
+  return data?.posts;
 }
