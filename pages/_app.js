@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import '../styles/gallery.css';
 
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query'
 import { getRecentPosts } from '../lib/service';

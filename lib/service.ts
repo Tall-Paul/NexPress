@@ -1,7 +1,7 @@
 import { fetchAPI } from "./base";
 
 export async function getSinglePost(slug:string){
-    console.log(slug);
+    //console.log(slug);
     const data = await fetchAPI(
         `query fetchPost {
             postBy(slug: "`+slug[3]+`") {
